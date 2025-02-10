@@ -1,8 +1,19 @@
-RichEditor for Android
-=============
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-richeditor--android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1696)
-[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://api.bintray.com/packages/wasabeef/maven/richeditor-android/images/download.svg)](https://bintray.com/wasabeef/maven/richeditor-android/_latestVersion)
+<p align="center">
+  <a href="https://pub.dev/packages/flutter_gen">
+    <img src="https://github.com/wasabeef/richeditor-android/raw/master/art/logo.png" width="480px"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://android-arsenal.com/details/1/1696">
+    <img src="https://img.shields.io/badge/Android%20Arsenal-richeditor--android-brightgreen.svg?style=flat">
+  </a>
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">
+    <img src="https://img.shields.io/badge/license-Apache%202-blue.svg" />
+  </a>
+  <a href="https://search.maven.org/artifact/jp.wasabeef/richeditor-android">
+    <img src="https://maven-badges.herokuapp.com/maven-central/jp.wasabeef/richeditor-android/badge.svg" />
+  </a>
+</p>
 
 `RichEditor for Android` is a beautiful Rich Text `WYSIWYG Editor` for `Android`.
 
@@ -34,6 +45,9 @@ Supported Functions
 - [x] Indent
 - [x] Outdent
 - [x] Insert Image
+- [x] Insert Youtube
+- [x] Insert Video
+- [x] Insert Audio
 - [x] Insert Link
 - [x] Checkbox
 - [x] Text Color
@@ -61,11 +75,6 @@ Demo
 
 ![Demo](./art/demo2.gif)
 
-Samples
----
-
-<a href="https://play.google.com/store/apps/details?id=jp.wasabeef.sample"><img src="http://www.android.com/images/brand/get_it_on_play_logo_large.png"/></a>
-
 How do I use it?
 ---
 
@@ -74,11 +83,11 @@ How do I use it?
 ##### Gradle
 ```groovy
 repositories {
-    jcenter()
+  mavenCentral()
 }
 
 dependencies {
-    compile 'jp.wasabeef:richeditor-android:1.2.2'
+  implementation 'jp.wasabeef:richeditor-android:2.0.0'
 }
 ```
 ### Default Setting for Editor
@@ -180,7 +189,7 @@ Thanks
 License
 -------
 
-    Copyright 2017 Wasabeef
+    Copyright (C) 2020 Wasabeef
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

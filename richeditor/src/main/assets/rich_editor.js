@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2017 Wasabeef
+ * Copyright (C) 2020 Wasabeef
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/**
+ * See about document.execCommand: https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
  */
 
 var RE = {};
@@ -28,7 +32,7 @@ document.addEventListener("selectionchange", function() { RE.backuprange(); });
 
 // Initializations
 RE.callback = function() {
-    window.location.href = "re-callback://" + encodeURI(RE.getHtml());
+    window.location.href = "re-callback://" + encodeURIComponent(RE.getHtml());
 }
 
 RE.setHtml = function(contents) {
@@ -178,6 +182,51 @@ RE.setBlockquote = function() {
 
 RE.insertImage = function(url, alt) {
     var html = '<img src="' + url + '" alt="' + alt + '" />';
+    RE.insertHTML(html);
+}
+
+RE.insertImageW = function(url, alt, width) {
+    var html = '<img src="' + url + '" alt="' + alt + '" width="' + width + '"/>';
+    RE.insertHTML(html);
+}
+
+RE.insertImageWH = function(url, alt, width, height) {
+    var html = '<img src="' + url + '" alt="' + alt + '" width="' + width + '" height="' + height +'"/>';
+    RE.insertHTML(html);
+}
+
+RE.insertVideo = function(url, alt) {
+    var html = '<video src="' + url + '" controls></video><br>';
+    RE.insertHTML(html);
+}
+
+RE.insertVideoW = function(url, width) {
+    var html = '<video src="' + url + '" width="' + width + '" controls></video><br>';
+    RE.insertHTML(html);
+}
+
+RE.insertVideoWH = function(url, width, height) {
+    var html = '<video src="' + url + '" width="' + width + '" height="' + height + '" controls></video><br>';
+    RE.insertHTML(html);
+}
+
+RE.insertAudio = function(url, alt) {
+    var html = '<audio src="' + url + '" controls></audio><br>';
+    RE.insertHTML(html);
+}
+
+RE.insertYoutubeVideo = function(url) {
+    var html = '<iframe width="100%" height="100%" src="' + url + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>'
+    RE.insertHTML(html);
+}
+
+RE.insertYoutubeVideoW = function(url, width) {
+    var html = '<iframe width="' + width + '" src="' + url + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>'
+    RE.insertHTML(html);
+}
+
+RE.insertYoutubeVideoWH = function(url, width, height) {
+    var html = '<iframe width="' + width + '" height="' + height + '" src="' + url + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>'
     RE.insertHTML(html);
 }
 
